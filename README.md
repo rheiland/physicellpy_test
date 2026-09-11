@@ -17,3 +17,8 @@ $ python
 cd samples/heterogeneity
 python hetero.py
 ```
+
+```
+# Very prelim docs
+$ open docs/_build/html/index.html
+```
