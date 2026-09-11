@@ -20,5 +20,5 @@ python hetero.py
 
 ```
 # Very prelim docs
-$ open docs/_build/html/index.html
+docs/_build/html/index.html
 ```
