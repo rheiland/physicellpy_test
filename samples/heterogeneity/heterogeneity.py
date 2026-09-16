@@ -7,11 +7,6 @@ from heterogeneity_coloring import heterogeneity_coloring_function
 # pc.initialize("../PhysiCell-development/sample_projects/heterogeneity/config/PhysiCell_settings.xml")
 
 # os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../user_projects/hetero"))
-                       
-
-pc.initialize("config/PhysiCell_settings.xml")
-
-tumor_def = pc.find_cell_definition("cancer cell")
 
 # custom.cpp's create_cell_types() sets these on pCD->parameters before
 # setup_tissue() ever runs -- required so update_cell_and_death_parameters_O2_based's
@@ -19,6 +14,9 @@ tumor_def = pc.find_cell_definition("cancer cell")
 # than PhysiCell's generic normoxic default (160), which otherwise suppresses
 # proliferation to a small fraction of the intended rate and reads as cells
 # "dying too fast" (they're not dying faster, they're barely dividing).
+
+pc.initialize("config/PhysiCell_settings.xml")
+tumor_def = pc.find_cell_definition("cancer cell")
 tumor_def.parameters.o2_proliferation_saturation = 38
 tumor_def.parameters.o2_reference = 38
 
@@ -36,13 +34,6 @@ def tumor_cell_phenotype_with_oncoprotein(cell, phenotype, dt):
 tumor_def.set_update_phenotype(tumor_cell_phenotype_with_oncoprotein)
 
 cells = setup_tissue(pc)
-# cells = []
-# for i in range(10):
-#     c = pc.create_cell(tumor_def)
-#     c.position = [i * 15.0 - 75.0, 0.0, 0.0]
-#     c.custom_data["oncoprotein"] = 0.5 + 0.1 * i  # vary it per cell like the C++ example's random draw
-#     cells.append(c)
-
 
 folder = pc.config_folder()
 pc.svg_options.length_bar = 200
@@ -54,10 +45,10 @@ pc.save_multicellds(f"{folder}/initial")
 
 demo_max_time = 25920.0  # minutes (18 days - seen in PlosCompBio paper)
 demo_max_time = 21600.0  # minutes (15 days)
-demo_max_time = 120.0  # minutes
+# demo_max_time = 120.0  # minutes
 
 report_every = 120.0    # minutes
-report_every = 30.0    # minutes
+# report_every = 30.0    # minutes
 
 next_report = 0.0
 output_index = 0
