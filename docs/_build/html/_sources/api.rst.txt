@@ -28,6 +28,8 @@ Cells and cell types
 .. autofunction:: physicellpy.find_cell_definition
 .. autofunction:: physicellpy.cell_type_names
 .. autofunction:: physicellpy.register_cell_definition
+.. autofunction:: physicellpy.attach_cells
+.. autofunction:: physicellpy.detach_cells
 
 .. autoclass:: physicellpy.Cell
    :members:
