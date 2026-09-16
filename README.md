@@ -1,6 +1,6 @@
 # physicellpy_test
 
-What OS/chip and version of Python are you using? Download an appropriate .whl and run `pip install <full-name>.whl` (or maybe pip installing from the URL?)
+What OS/arch and version of Python are you using? Download an appropriate .whl and run `pip install <full-name>.whl` (or maybe pip installing from the URL?)
 
 ```
 # inspect the package's contents:
@@ -15,7 +15,7 @@ $ python
 
 ```
 cd samples/heterogeneity
-python hetero.py
+python heterogeneity.py
 ```
 
 ```
