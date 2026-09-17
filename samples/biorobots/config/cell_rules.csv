@@ -1,0 +1,2 @@
+worker cell,director signal,increases,chemotactic response to director signal,1,0.1,4,0
+worker cell,cargo signal,increases,chemotactic response to cargo signal,1,0.1,4,0
