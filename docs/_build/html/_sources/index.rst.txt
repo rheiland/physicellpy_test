@@ -14,6 +14,8 @@ this API reference.
    :maxdepth: 2
 
    api
+   publications
+   funding
 
 Getting started
 ----------------

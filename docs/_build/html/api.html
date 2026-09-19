@@ -19,6 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Funding" href="funding.html" />
     <link rel="prev" title="physicellpy" href="index.html" /> 
 </head>
 
@@ -69,7 +70,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.detach_cells"><code class="docutils literal notranslate"><span class="pre">detach_cells()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell"><code class="docutils literal notranslate"><span class="pre">Cell</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.ID"><code class="docutils literal notranslate"><span class="pre">Cell.ID</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.attached_cells"><code class="docutils literal notranslate"><span class="pre">Cell.attached_cells</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.cells_in_my_container"><code class="docutils literal notranslate"><span class="pre">Cell.cells_in_my_container()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.clear_contact_function"><code class="docutils literal notranslate"><span class="pre">Cell.clear_contact_function()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.clear_custom_cell_rule"><code class="docutils literal notranslate"><span class="pre">Cell.clear_custom_cell_rule()</span></code></a></li>
@@ -77,10 +77,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.custom_data"><code class="docutils literal notranslate"><span class="pre">Cell.custom_data</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.flag_for_division"><code class="docutils literal notranslate"><span class="pre">Cell.flag_for_division()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.flag_for_removal"><code class="docutils literal notranslate"><span class="pre">Cell.flag_for_removal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.is_movable"><code class="docutils literal notranslate"><span class="pre">Cell.is_movable</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.is_out_of_domain"><code class="docutils literal notranslate"><span class="pre">Cell.is_out_of_domain()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.nearest_density_vector"><code class="docutils literal notranslate"><span class="pre">Cell.nearest_density_vector()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.number_of_attached_cells"><code class="docutils literal notranslate"><span class="pre">Cell.number_of_attached_cells()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.orientation"><code class="docutils literal notranslate"><span class="pre">Cell.orientation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.parameters"><code class="docutils literal notranslate"><span class="pre">Cell.parameters</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.phenotype"><code class="docutils literal notranslate"><span class="pre">Cell.phenotype</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.position"><code class="docutils literal notranslate"><span class="pre">Cell.position</span></code></a></li>
@@ -90,11 +89,24 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.set_internal_uptake_constants"><code class="docutils literal notranslate"><span class="pre">Cell.set_internal_uptake_constants()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.set_total_volume"><code class="docutils literal notranslate"><span class="pre">Cell.set_total_volume()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.set_update_phenotype"><code class="docutils literal notranslate"><span class="pre">Cell.set_update_phenotype()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.simple_pressure"><code class="docutils literal notranslate"><span class="pre">Cell.simple_pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.state"><code class="docutils literal notranslate"><span class="pre">Cell.state</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.type"><code class="docutils literal notranslate"><span class="pre">Cell.type</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.type_name"><code class="docutils literal notranslate"><span class="pre">Cell.type_name</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.update_position"><code class="docutils literal notranslate"><span class="pre">Cell.update_position()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.velocity"><code class="docutils literal notranslate"><span class="pre">Cell.velocity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellState"><code class="docutils literal notranslate"><span class="pre">CellState</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.attached_cells"><code class="docutils literal notranslate"><span class="pre">CellState.attached_cells</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.attacked_by"><code class="docutils literal notranslate"><span class="pre">CellState.attacked_by</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.contact_with_basement_membrane"><code class="docutils literal notranslate"><span class="pre">CellState.contact_with_basement_membrane</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.neighbors"><code class="docutils literal notranslate"><span class="pre">CellState.neighbors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.number_of_attached_cells"><code class="docutils literal notranslate"><span class="pre">CellState.number_of_attached_cells()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.number_of_nuclei"><code class="docutils literal notranslate"><span class="pre">CellState.number_of_nuclei</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.orientation"><code class="docutils literal notranslate"><span class="pre">CellState.orientation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.simple_pressure"><code class="docutils literal notranslate"><span class="pre">CellState.simple_pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.spring_attachments"><code class="docutils literal notranslate"><span class="pre">CellState.spring_attachments</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellState.total_attack_time"><code class="docutils literal notranslate"><span class="pre">CellState.total_attack_time</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellDefinition"><code class="docutils literal notranslate"><span class="pre">CellDefinition</span></code></a><ul>
@@ -309,6 +321,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
 </ul>
 
         </div>
@@ -470,12 +483,6 @@
 <dd><p>This cell’s unique integer ID, assigned at creation</p>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py" id="physicellpy.Cell.attached_cells">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">attached_cells</span></span><a class="headerlink" href="#physicellpy.Cell.attached_cells" title="Link to this definition"></a></dt>
-<dd><p>List of cells currently attached to this cell (spring/generic attachments). Modify via attach_cells()/detach_cells() rather than in place.</p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="physicellpy.Cell.cells_in_my_container">
 <span class="sig-name descname"><span class="pre">cells_in_my_container</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#physicellpy.Cell.cells_in_my_container" title="Link to this definition"></a></dt>
@@ -523,6 +530,12 @@
 <dd><p>Mark this cell for removal at the next mechanics update</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.Cell.is_movable">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">is_movable</span></span><a class="headerlink" href="#physicellpy.Cell.is_movable" title="Link to this definition"></a></dt>
+<dd><p>Whether mechanics updates this cell’s position/velocity at all. Set False to pin a cell in place (e.g. after ingestion/fusion); new cells inherit this from their CellDefinition at creation.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="physicellpy.Cell.is_out_of_domain">
 <span class="sig-name descname"><span class="pre">is_out_of_domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#physicellpy.Cell.is_out_of_domain" title="Link to this definition"></a></dt>
@@ -533,18 +546,6 @@
 <dt class="sig sig-object py" id="physicellpy.Cell.nearest_density_vector">
 <span class="sig-name descname"><span class="pre">nearest_density_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#physicellpy.Cell.nearest_density_vector" title="Link to this definition"></a></dt>
 <dd><p>Zero-copy view of the local substrate concentrations at this cell’s voxel</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="physicellpy.Cell.number_of_attached_cells">
-<span class="sig-name descname"><span class="pre">number_of_attached_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#physicellpy.Cell.number_of_attached_cells" title="Link to this definition"></a></dt>
-<dd><p>Number of cells currently attached to this cell</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="physicellpy.Cell.orientation">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#physicellpy.Cell.orientation" title="Link to this definition"></a></dt>
-<dd><p>Unit vector describing this cell/fibre’s orientation (used by PhysiMeSS fibres; generally unused for ordinary cells)</p>
 </dd></dl>
 
 <dl class="py property">
@@ -602,9 +603,9 @@
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="physicellpy.Cell.simple_pressure">
-<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">simple_pressure</span></span><a class="headerlink" href="#physicellpy.Cell.simple_pressure" title="Link to this definition"></a></dt>
-<dd><p>Nondimensionalized mechanical pressure acting on the cell – the grammar’s ‘pressure’ signal (Cell_grammar_supp.pdf)</p>
+<dt class="sig sig-object py" id="physicellpy.Cell.state">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#physicellpy.Cell.state" title="Link to this definition"></a></dt>
+<dd><p>This cell’s CellState – attachments, neighbors, orientation, pressure</p>
 </dd></dl>
 
 <dl class="py property">
@@ -629,6 +630,71 @@
 <dt class="sig sig-object py" id="physicellpy.Cell.velocity">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">velocity</span></span><a class="headerlink" href="#physicellpy.Cell.velocity" title="Link to this definition"></a></dt>
 <dd><p>Current [vx, vy, vz] velocity (micron/min), from adhesion/repulsion/motility</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="physicellpy.CellState">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">CellState</span></span><a class="headerlink" href="#physicellpy.CellState" title="Link to this definition"></a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.attached_cells">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">attached_cells</span></span><a class="headerlink" href="#physicellpy.CellState.attached_cells" title="Link to this definition"></a></dt>
+<dd><p>Cells generically attached to this cell – see attach_cells()/detach_cells()</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.attacked_by">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">attacked_by</span></span><a class="headerlink" href="#physicellpy.CellState.attacked_by" title="Link to this definition"></a></dt>
+<dd><p>Cells currently attacking this cell – reverse of phenotype.cell_interactions’ attack target</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.contact_with_basement_membrane">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">contact_with_basement_membrane</span></span><a class="headerlink" href="#physicellpy.CellState.contact_with_basement_membrane" title="Link to this definition"></a></dt>
+<dd><p>Whether this cell is in contact with the basement membrane (not yet implemented upstream in PhysiCell)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.neighbors">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">neighbors</span></span><a class="headerlink" href="#physicellpy.CellState.neighbors" title="Link to this definition"></a></dt>
+<dd><p>Cells currently within mechanical interaction range of this cell</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellState.number_of_attached_cells">
+<span class="sig-name descname"><span class="pre">number_of_attached_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellState" title="physicellpy.CellState"><span class="pre">physicellpy.CellState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#physicellpy.CellState.number_of_attached_cells" title="Link to this definition"></a></dt>
+<dd><p>Number of cells in attached_cells</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.number_of_nuclei">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">number_of_nuclei</span></span><a class="headerlink" href="#physicellpy.CellState.number_of_nuclei" title="Link to this definition"></a></dt>
+<dd><p>Number of nuclei this agent currently has (&gt;1 after cell fusion)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.orientation">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">orientation</span></span><a class="headerlink" href="#physicellpy.CellState.orientation" title="Link to this definition"></a></dt>
+<dd><p>Unit vector describing this cell/fibre’s orientation (used by PhysiMeSS fibres; generally unused for ordinary cells)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.simple_pressure">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">simple_pressure</span></span><a class="headerlink" href="#physicellpy.CellState.simple_pressure" title="Link to this definition"></a></dt>
+<dd><p>Nondimensionalized mechanical pressure acting on the cell – the grammar’s ‘pressure’ signal (Cell_grammar_supp.pdf)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.spring_attachments">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">spring_attachments</span></span><a class="headerlink" href="#physicellpy.CellState.spring_attachments" title="Link to this definition"></a></dt>
+<dd><p>Cells attached to this cell via spring links (attach_cells_as_spring())</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.CellState.total_attack_time">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">total_attack_time</span></span><a class="headerlink" href="#physicellpy.CellState.total_attack_time" title="Link to this definition"></a></dt>
+<dd><p>Cumulative time this cell has spent attacking another cell</p>
 </dd></dl>
 
 </dd></dl>
@@ -1627,12 +1693,13 @@ default magnitudes.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="physicellpy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="funding.html" class="btn btn-neutral float-right" title="Funding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2026, Randy Heiland.</p>
+    <p>&#169; Copyright 2026, Randy Heiland, Paul Macklin.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

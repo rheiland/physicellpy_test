@@ -34,6 +34,9 @@ Cells and cell types
 .. autoclass:: physicellpy.Cell
    :members:
 
+.. autoclass:: physicellpy.CellState
+   :members:
+
 .. autoclass:: physicellpy.CellDefinition
    :members:
 

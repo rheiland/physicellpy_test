@@ -41,6 +41,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
 </ul>
 
         </div>
@@ -108,13 +110,13 @@
 </li>
       <li><a href="api.html#physicellpy.HypothesisRule.apply">apply() (physicellpy.HypothesisRule method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#physicellpy.PhysiMeSSFibre.assign_fibre_orientation">assign_fibre_orientation() (physicellpy.PhysiMeSSFibre method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#physicellpy.attach_cells">attach_cells() (in module physicellpy)</a>
 </li>
-      <li><a href="api.html#physicellpy.Cell.attached_cells">attached_cells (physicellpy.Cell property)</a>
+      <li><a href="api.html#physicellpy.CellState.attached_cells">attached_cells (physicellpy.CellState property)</a>
 </li>
       <li><a href="api.html#physicellpy.CellInteractions.attack_damage_rate">attack_damage_rate (physicellpy.CellInteractions property)</a>
 </li>
@@ -125,6 +127,8 @@
       <li><a href="api.html#physicellpy.CellInteractions.attack_rates">attack_rates (physicellpy.CellInteractions property)</a>
 </li>
       <li><a href="api.html#physicellpy.CellInteractions.attack_target">attack_target (physicellpy.CellInteractions property)</a>
+</li>
+      <li><a href="api.html#physicellpy.CellState.attacked_by">attacked_by (physicellpy.CellState property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -180,6 +184,8 @@
 </li>
       <li><a href="api.html#physicellpy.Cell.cells_in_my_container">cells_in_my_container() (physicellpy.Cell method)</a>
 </li>
+      <li><a href="api.html#physicellpy.CellState">CellState (class in physicellpy)</a>
+</li>
       <li><a href="api.html#physicellpy.CellTransformations">CellTransformations (class in physicellpy)</a>
 </li>
   </ul></td>
@@ -209,6 +215,8 @@
 </li>
       </ul></li>
       <li><a href="api.html#physicellpy.config_folder">config_folder() (in module physicellpy)</a>
+</li>
+      <li><a href="api.html#physicellpy.CellState.contact_with_basement_membrane">contact_with_basement_membrane (physicellpy.CellState property)</a>
 </li>
       <li><a href="api.html#physicellpy.create_cell">create_cell() (in module physicellpy)</a>
 </li>
@@ -346,13 +354,15 @@
 </li>
       <li><a href="api.html#physicellpy.CellInteractions.immunogenicity">immunogenicity() (physicellpy.CellInteractions method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#physicellpy.initialize">initialize() (in module physicellpy)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#physicellpy.is_fibre">is_fibre() (in module physicellpy)</a>
 </li>
       <li><a href="api.html#physicellpy.Motility.is_motile">is_motile (physicellpy.Motility property)</a>
+</li>
+      <li><a href="api.html#physicellpy.Cell.is_movable">is_movable (physicellpy.Cell property)</a>
 </li>
       <li><a href="api.html#physicellpy.Cell.is_out_of_domain">is_out_of_domain() (physicellpy.Cell method)</a>
 </li>
@@ -422,6 +432,8 @@
 </li>
       <li><a href="api.html#physicellpy.CellInteractions.necrotic_phagocytosis_rate">necrotic_phagocytosis_rate (physicellpy.CellInteractions property)</a>
 </li>
+      <li><a href="api.html#physicellpy.CellState.neighbors">neighbors (physicellpy.CellState property)</a>
+</li>
       <li><a href="api.html#physicellpy.Secretion.net_export_rate">net_export_rate() (physicellpy.Secretion method)</a>
 </li>
       <li><a href="api.html#physicellpy.Secretion.net_export_rates">net_export_rates (physicellpy.Secretion property)</a>
@@ -432,9 +444,11 @@
 </li>
       <li><a href="api.html#physicellpy.Volume.nuclear_biomass_change_rate">nuclear_biomass_change_rate (physicellpy.Volume property)</a>
 </li>
-      <li><a href="api.html#physicellpy.Cell.number_of_attached_cells">number_of_attached_cells() (physicellpy.Cell method)</a>
+      <li><a href="api.html#physicellpy.CellState.number_of_attached_cells">number_of_attached_cells() (physicellpy.CellState method)</a>
 </li>
       <li><a href="api.html#physicellpy.Microenvironment.number_of_densities">number_of_densities (physicellpy.Microenvironment property)</a>
+</li>
+      <li><a href="api.html#physicellpy.CellState.number_of_nuclei">number_of_nuclei (physicellpy.CellState property)</a>
 </li>
       <li><a href="api.html#physicellpy.Microenvironment.number_of_voxels">number_of_voxels (physicellpy.Microenvironment property)</a>
 </li>
@@ -444,7 +458,7 @@
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#physicellpy.Cell.orientation">orientation (physicellpy.Cell property)</a>
+      <li><a href="api.html#physicellpy.CellState.orientation">orientation (physicellpy.CellState property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -562,10 +576,10 @@
         <li><a href="api.html#physicellpy.CellDefinition.set_custom_cell_rule">(physicellpy.CellDefinition method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#physicellpy.HypothesisRule.set_half_max">set_half_max() (physicellpy.HypothesisRule method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#physicellpy.HypothesisRule.set_hill_power">set_hill_power() (physicellpy.HypothesisRule method)</a>
 </li>
       <li><a href="api.html#physicellpy.set_hypothesis_parameters">set_hypothesis_parameters() (in module physicellpy)</a>
@@ -598,11 +612,15 @@
 </li>
       <li><a href="api.html#physicellpy.HypothesisRule.signals">signals (physicellpy.HypothesisRule property)</a>
 </li>
-      <li><a href="api.html#physicellpy.Cell.simple_pressure">simple_pressure (physicellpy.Cell property)</a>
+      <li><a href="api.html#physicellpy.CellState.simple_pressure">simple_pressure (physicellpy.CellState property)</a>
 </li>
       <li><a href="api.html#physicellpy.simulate_2D">simulate_2D() (in module physicellpy)</a>
 </li>
       <li><a href="api.html#physicellpy.Microenvironment.simulate_diffusion_decay">simulate_diffusion_decay() (physicellpy.Microenvironment method)</a>
+</li>
+      <li><a href="api.html#physicellpy.CellState.spring_attachments">spring_attachments (physicellpy.CellState property)</a>
+</li>
+      <li><a href="api.html#physicellpy.Cell.state">state (physicellpy.Cell property)</a>
 </li>
       <li><a href="api.html#physicellpy.PhysiMeSSCell.stuck_counter">stuck_counter (physicellpy.PhysiMeSSCell property)</a>
 </li>
@@ -624,12 +642,14 @@
 </li>
       <li><a href="api.html#physicellpy.Volume.total">total (physicellpy.Volume property)</a>
 </li>
-      <li><a href="api.html#physicellpy.CellInteractions.total_damage_delivered">total_damage_delivered (physicellpy.CellInteractions property)</a>
+      <li><a href="api.html#physicellpy.CellState.total_attack_time">total_attack_time (physicellpy.CellState property)</a>
 </li>
-      <li><a href="api.html#physicellpy.CellTransformations.transformation_rate">transformation_rate() (physicellpy.CellTransformations method)</a>
+      <li><a href="api.html#physicellpy.CellInteractions.total_damage_delivered">total_damage_delivered (physicellpy.CellInteractions property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#physicellpy.CellTransformations.transformation_rate">transformation_rate() (physicellpy.CellTransformations method)</a>
+</li>
       <li><a href="api.html#physicellpy.CellTransformations.transformation_rates">transformation_rates (physicellpy.CellTransformations property)</a>
 </li>
       <li><a href="api.html#physicellpy.Death.trigger_death">trigger_death() (physicellpy.Death method)</a>
@@ -690,7 +710,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2026, Randy Heiland.</p>
+    <p>&#169; Copyright 2026, Randy Heiland, Paul Macklin.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -12,8 +12,8 @@
 # docs venv before Sphinx runs.
 
 project = "physicellpy"
-copyright = "2026, Randy Heiland"
-author = "Randy Heiland"
+copyright = "2026, Randy Heiland, Paul Macklin"
+author = "Randy Heiland, Paul Macklin"
 
 extensions = [
     "sphinx.ext.autodoc",
