@@ -12,6 +12,8 @@ Simulation setup and control
 .. autofunction:: physicellpy.max_time
 .. autofunction:: physicellpy.diffusion_dt
 .. autofunction:: physicellpy.mechanics_dt
+.. autofunction:: physicellpy.intracellular_dt
+.. autofunction:: physicellpy.set_intracellular_dt
 .. autofunction:: physicellpy.simulate_2D
 .. autofunction:: physicellpy.config_folder
 .. autofunction:: physicellpy.load_cells_from_pugixml
@@ -33,12 +35,39 @@ Cells and cell types
 
 .. autoclass:: physicellpy.Cell
    :members:
+   :exclude-members: set_volume_update_function, clear_volume_update_function,
+      set_update_migration_bias, clear_update_migration_bias,
+      set_cell_division_function, clear_cell_division_function
 
 .. autoclass:: physicellpy.CellState
    :members:
 
 .. autoclass:: physicellpy.CellDefinition
    :members:
+   :exclude-members: set_volume_update_function, clear_volume_update_function,
+      set_update_migration_bias, clear_update_migration_bias,
+      set_cell_division_function, clear_cell_division_function
+
+Custom cell-behavior hooks
+----------------------------
+
+Per-cell (``Cell``) overrides take effect for one cell instance only; the
+``CellDefinition`` variants apply to every future ``create_cell()`` call
+against that definition.
+
+.. automethod:: physicellpy.Cell.set_volume_update_function
+.. automethod:: physicellpy.Cell.clear_volume_update_function
+.. automethod:: physicellpy.Cell.set_update_migration_bias
+.. automethod:: physicellpy.Cell.clear_update_migration_bias
+.. automethod:: physicellpy.Cell.set_cell_division_function
+.. automethod:: physicellpy.Cell.clear_cell_division_function
+
+.. automethod:: physicellpy.CellDefinition.set_volume_update_function
+.. automethod:: physicellpy.CellDefinition.clear_volume_update_function
+.. automethod:: physicellpy.CellDefinition.set_update_migration_bias
+.. automethod:: physicellpy.CellDefinition.clear_update_migration_bias
+.. automethod:: physicellpy.CellDefinition.set_cell_division_function
+.. automethod:: physicellpy.CellDefinition.clear_cell_division_function
 
 .. autoclass:: physicellpy.CellParameters
    :members:
@@ -118,6 +147,7 @@ Output
 .. autofunction:: physicellpy.save_svg
 .. autofunction:: physicellpy.save_svg_legend
 .. autofunction:: physicellpy.save_multicellds
+.. autofunction:: physicellpy.resume_from_multicellds
 .. autofunction:: physicellpy.set_svg_coloring_function
 .. autofunction:: physicellpy.clear_svg_coloring_function
 

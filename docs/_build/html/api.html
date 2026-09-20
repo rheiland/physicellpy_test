@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Funding" href="funding.html" />
+    <link rel="next" title="Publications" href="publications.html" />
     <link rel="prev" title="physicellpy" href="index.html" /> 
 </head>
 
@@ -53,6 +53,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.max_time"><code class="docutils literal notranslate"><span class="pre">max_time()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.diffusion_dt"><code class="docutils literal notranslate"><span class="pre">diffusion_dt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.mechanics_dt"><code class="docutils literal notranslate"><span class="pre">mechanics_dt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.intracellular_dt"><code class="docutils literal notranslate"><span class="pre">intracellular_dt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.set_intracellular_dt"><code class="docutils literal notranslate"><span class="pre">set_intracellular_dt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.simulate_2D"><code class="docutils literal notranslate"><span class="pre">simulate_2D()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.config_folder"><code class="docutils literal notranslate"><span class="pre">config_folder()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.load_cells_from_pugixml"><code class="docutils literal notranslate"><span class="pre">load_cells_from_pugixml()</span></code></a></li>
@@ -74,6 +76,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.clear_contact_function"><code class="docutils literal notranslate"><span class="pre">Cell.clear_contact_function()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.clear_custom_cell_rule"><code class="docutils literal notranslate"><span class="pre">Cell.clear_custom_cell_rule()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.clear_update_phenotype"><code class="docutils literal notranslate"><span class="pre">Cell.clear_update_phenotype()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.clear_update_velocity"><code class="docutils literal notranslate"><span class="pre">Cell.clear_update_velocity()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.custom_data"><code class="docutils literal notranslate"><span class="pre">Cell.custom_data</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.flag_for_division"><code class="docutils literal notranslate"><span class="pre">Cell.flag_for_division()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.flag_for_removal"><code class="docutils literal notranslate"><span class="pre">Cell.flag_for_removal()</span></code></a></li>
@@ -89,6 +92,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.set_internal_uptake_constants"><code class="docutils literal notranslate"><span class="pre">Cell.set_internal_uptake_constants()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.set_total_volume"><code class="docutils literal notranslate"><span class="pre">Cell.set_total_volume()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.set_update_phenotype"><code class="docutils literal notranslate"><span class="pre">Cell.set_update_phenotype()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.set_update_velocity"><code class="docutils literal notranslate"><span class="pre">Cell.set_update_velocity()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.state"><code class="docutils literal notranslate"><span class="pre">Cell.state</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.type"><code class="docutils literal notranslate"><span class="pre">Cell.type</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.type_name"><code class="docutils literal notranslate"><span class="pre">Cell.type_name</span></code></a></li>
@@ -113,6 +117,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.clear_contact_function"><code class="docutils literal notranslate"><span class="pre">CellDefinition.clear_contact_function()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.clear_custom_cell_rule"><code class="docutils literal notranslate"><span class="pre">CellDefinition.clear_custom_cell_rule()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.clear_update_phenotype"><code class="docutils literal notranslate"><span class="pre">CellDefinition.clear_update_phenotype()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.clear_update_velocity"><code class="docutils literal notranslate"><span class="pre">CellDefinition.clear_update_velocity()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.custom_data"><code class="docutils literal notranslate"><span class="pre">CellDefinition.custom_data</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.name"><code class="docutils literal notranslate"><span class="pre">CellDefinition.name</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.parameters"><code class="docutils literal notranslate"><span class="pre">CellDefinition.parameters</span></code></a></li>
@@ -120,9 +125,25 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.set_contact_function"><code class="docutils literal notranslate"><span class="pre">CellDefinition.set_contact_function()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.set_custom_cell_rule"><code class="docutils literal notranslate"><span class="pre">CellDefinition.set_custom_cell_rule()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.set_update_phenotype"><code class="docutils literal notranslate"><span class="pre">CellDefinition.set_update_phenotype()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.set_update_velocity"><code class="docutils literal notranslate"><span class="pre">CellDefinition.set_update_velocity()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CellDefinition.type"><code class="docutils literal notranslate"><span class="pre">CellDefinition.type</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-cell-behavior-hooks">Custom cell-behavior hooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell.set_volume_update_function"><code class="docutils literal notranslate"><span class="pre">Cell.set_volume_update_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell.clear_volume_update_function"><code class="docutils literal notranslate"><span class="pre">Cell.clear_volume_update_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell.set_update_migration_bias"><code class="docutils literal notranslate"><span class="pre">Cell.set_update_migration_bias()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell.clear_update_migration_bias"><code class="docutils literal notranslate"><span class="pre">Cell.clear_update_migration_bias()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell.set_cell_division_function"><code class="docutils literal notranslate"><span class="pre">Cell.set_cell_division_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell.clear_cell_division_function"><code class="docutils literal notranslate"><span class="pre">Cell.clear_cell_division_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellDefinition.set_volume_update_function"><code class="docutils literal notranslate"><span class="pre">CellDefinition.set_volume_update_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellDefinition.clear_volume_update_function"><code class="docutils literal notranslate"><span class="pre">CellDefinition.clear_volume_update_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellDefinition.set_update_migration_bias"><code class="docutils literal notranslate"><span class="pre">CellDefinition.set_update_migration_bias()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellDefinition.clear_update_migration_bias"><code class="docutils literal notranslate"><span class="pre">CellDefinition.clear_update_migration_bias()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellDefinition.set_cell_division_function"><code class="docutils literal notranslate"><span class="pre">CellDefinition.set_cell_division_function()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellDefinition.clear_cell_division_function"><code class="docutils literal notranslate"><span class="pre">CellDefinition.clear_cell_division_function()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.CellParameters"><code class="docutils literal notranslate"><span class="pre">CellParameters</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.CustomCellData"><code class="docutils literal notranslate"><span class="pre">CustomCellData</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.CustomCellData.variables"><code class="docutils literal notranslate"><span class="pre">CustomCellData.variables()</span></code></a></li>
@@ -293,6 +314,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.save_svg"><code class="docutils literal notranslate"><span class="pre">save_svg()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.save_svg_legend"><code class="docutils literal notranslate"><span class="pre">save_svg_legend()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.save_multicellds"><code class="docutils literal notranslate"><span class="pre">save_multicellds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.resume_from_multicellds"><code class="docutils literal notranslate"><span class="pre">resume_from_multicellds()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.set_svg_coloring_function"><code class="docutils literal notranslate"><span class="pre">set_svg_coloring_function()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.clear_svg_coloring_function"><code class="docutils literal notranslate"><span class="pre">clear_svg_coloring_function()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.SVGOptions"><code class="docutils literal notranslate"><span class="pre">SVGOptions</span></code></a></li>
@@ -321,6 +343,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
 </ul>
 
@@ -398,6 +421,18 @@
 <dt class="sig sig-object py" id="physicellpy.mechanics_dt">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">mechanics_dt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#physicellpy.mechanics_dt" title="Link to this definition"></a></dt>
 <dd><p>Mechanics time step (minutes) from the loaded config’s &lt;dt_mechanics&gt; – a distinct value from diffusion_dt(). Needed for pc.physimess_mechanics(dt), which expects the same dt PhysiCell’s own main.cpp passes it (PhysiMeSS.cpp self-gates on this value, same pattern update_all_cells() uses internally for its own mechanics/phenotype timing).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.intracellular_dt">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">intracellular_dt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#physicellpy.intracellular_dt" title="Link to this definition"></a></dt>
+<dd><p>Intracellular time step (minutes) from the loaded config’s &lt;dt_intracellular&gt;</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.set_intracellular_dt">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">set_intracellular_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.set_intracellular_dt" title="Link to this definition"></a></dt>
+<dd><p>Override the intracellular time step (minutes) set by the loaded config’s &lt;dt_intracellular&gt;. Affects update_all_cells()’s intracellular-model update cadence (pre_update_intracellular/post_update_intracellular) on subsequent run_simulation_step() calls.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -507,6 +542,12 @@
 <dd><p>Unregister the per-cell update_phenotype hook set by set_update_phenotype()</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.clear_update_velocity">
+<span class="sig-name descname"><span class="pre">clear_update_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.clear_update_velocity" title="Link to this definition"></a></dt>
+<dd><p>Unregister the per-cell update_velocity hook set by set_update_velocity()</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.Cell.custom_data">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">custom_data</span></span><a class="headerlink" href="#physicellpy.Cell.custom_data" title="Link to this definition"></a></dt>
@@ -602,6 +643,12 @@
 <dd><p>Register a Python callable update_phenotype(cell, phenotype, dt) hook for this cell only.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.set_update_velocity">
+<span class="sig-name descname"><span class="pre">set_update_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.set_update_velocity" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable update_velocity(cell, phenotype, dt) hook, replacing the standard adhesion/repulsion/motility velocity update, for this cell only.</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.Cell.state">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">state</span></span><a class="headerlink" href="#physicellpy.Cell.state" title="Link to this definition"></a></dt>
@@ -629,7 +676,7 @@
 <dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.Cell.velocity">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">velocity</span></span><a class="headerlink" href="#physicellpy.Cell.velocity" title="Link to this definition"></a></dt>
-<dd><p>Current [vx, vy, vz] velocity (micron/min), from adhesion/repulsion/motility</p>
+<dd><p>Current [vx, vy, vz] velocity (micron/min). Normally set by the adhesion/repulsion/motility mechanics update each step; settable directly for a custom update_velocity() hook (see set_update_velocity) or before calling update_position(dt) to move the cell explicitly.</p>
 </dd></dl>
 
 </dd></dl>
@@ -720,6 +767,12 @@
 <dd><p>Unregister the update_phenotype hook set by set_update_phenotype()</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.clear_update_velocity">
+<span class="sig-name descname"><span class="pre">clear_update_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.clear_update_velocity" title="Link to this definition"></a></dt>
+<dd><p>Unregister the update_velocity hook set by set_update_velocity()</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.CellDefinition.custom_data">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">custom_data</span></span><a class="headerlink" href="#physicellpy.CellDefinition.custom_data" title="Link to this definition"></a></dt>
@@ -762,12 +815,96 @@
 <dd><p>Register a Python callable update_phenotype(cell, phenotype, dt) hook, applied to every future create_cell() call against this definition.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.set_update_velocity">
+<span class="sig-name descname"><span class="pre">set_update_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.set_update_velocity" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable update_velocity(cell, phenotype, dt) hook, replacing the standard adhesion/repulsion/motility velocity update, applied to every future create_cell() call against this definition.</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.CellDefinition.type">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#physicellpy.CellDefinition.type" title="Link to this definition"></a></dt>
 <dd><p>This cell type’s integer index (must be unique; see register_cell_definition())</p>
 </dd></dl>
 
+</dd></dl>
+
+</section>
+<section id="custom-cell-behavior-hooks">
+<h2>Custom cell-behavior hooks<a class="headerlink" href="#custom-cell-behavior-hooks" title="Link to this heading"></a></h2>
+<p>Per-cell (<code class="docutils literal notranslate"><span class="pre">Cell</span></code>) overrides take effect for one cell instance only; the
+<code class="docutils literal notranslate"><span class="pre">CellDefinition</span></code> variants apply to every future <code class="docutils literal notranslate"><span class="pre">create_cell()</span></code> call
+against that definition.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.set_volume_update_function">
+<span class="sig-prename descclassname"><span class="pre">Cell.</span></span><span class="sig-name descname"><span class="pre">set_volume_update_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.set_volume_update_function" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable volume_update_function(cell, phenotype, dt) hook, replacing the standard volume-growth model, for this cell only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.clear_volume_update_function">
+<span class="sig-prename descclassname"><span class="pre">Cell.</span></span><span class="sig-name descname"><span class="pre">clear_volume_update_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.clear_volume_update_function" title="Link to this definition"></a></dt>
+<dd><p>Unregister the per-cell volume_update_function hook set by set_volume_update_function()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.set_update_migration_bias">
+<span class="sig-prename descclassname"><span class="pre">Cell.</span></span><span class="sig-name descname"><span class="pre">set_update_migration_bias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.set_update_migration_bias" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable update_migration_bias(cell, phenotype, dt) hook for this cell only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.clear_update_migration_bias">
+<span class="sig-prename descclassname"><span class="pre">Cell.</span></span><span class="sig-name descname"><span class="pre">clear_update_migration_bias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.clear_update_migration_bias" title="Link to this definition"></a></dt>
+<dd><p>Unregister the per-cell update_migration_bias hook set by set_update_migration_bias()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.set_cell_division_function">
+<span class="sig-prename descclassname"><span class="pre">Cell.</span></span><span class="sig-name descname"><span class="pre">set_cell_division_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.set_cell_division_function" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable cell_division_function(parent_cell, child_cell) hook, called once at the end of this cell’s division (the child has already been fully created, positioned, and had its phenotype copied from the parent by the time this runs), for this cell only.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.clear_cell_division_function">
+<span class="sig-prename descclassname"><span class="pre">Cell.</span></span><span class="sig-name descname"><span class="pre">clear_cell_division_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.Cell.clear_cell_division_function" title="Link to this definition"></a></dt>
+<dd><p>Unregister the per-cell cell_division_function hook set by set_cell_division_function()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.set_volume_update_function">
+<span class="sig-prename descclassname"><span class="pre">CellDefinition.</span></span><span class="sig-name descname"><span class="pre">set_volume_update_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.set_volume_update_function" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable volume_update_function(cell, phenotype, dt) hook, replacing the standard volume-growth model, applied to every future create_cell() call against this definition.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.clear_volume_update_function">
+<span class="sig-prename descclassname"><span class="pre">CellDefinition.</span></span><span class="sig-name descname"><span class="pre">clear_volume_update_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.clear_volume_update_function" title="Link to this definition"></a></dt>
+<dd><p>Unregister the volume_update_function hook set by set_volume_update_function()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.set_update_migration_bias">
+<span class="sig-prename descclassname"><span class="pre">CellDefinition.</span></span><span class="sig-name descname"><span class="pre">set_update_migration_bias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.set_update_migration_bias" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable update_migration_bias(cell, phenotype, dt) hook, applied to every future create_cell() call against this definition.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.clear_update_migration_bias">
+<span class="sig-prename descclassname"><span class="pre">CellDefinition.</span></span><span class="sig-name descname"><span class="pre">clear_update_migration_bias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.clear_update_migration_bias" title="Link to this definition"></a></dt>
+<dd><p>Unregister the update_migration_bias hook set by set_update_migration_bias()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.set_cell_division_function">
+<span class="sig-prename descclassname"><span class="pre">CellDefinition.</span></span><span class="sig-name descname"><span class="pre">set_cell_division_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.set_cell_division_function" title="Link to this definition"></a></dt>
+<dd><p>Register a Python callable cell_division_function(parent_cell, child_cell) hook, called once at the end of every division against every cell created from this definition (the child has already been fully created, positioned, and had its phenotype copied from the parent by the time this runs).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.CellDefinition.clear_cell_division_function">
+<span class="sig-prename descclassname"><span class="pre">CellDefinition.</span></span><span class="sig-name descname"><span class="pre">clear_cell_division_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.CellDefinition" title="physicellpy.CellDefinition"><span class="pre">physicellpy.CellDefinition</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.CellDefinition.clear_cell_division_function" title="Link to this definition"></a></dt>
+<dd><p>Unregister the cell_division_function hook set by set_cell_division_function()</p>
 </dd></dl>
 
 <dl class="py class">
@@ -1584,6 +1721,12 @@ default magnitudes.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.resume_from_multicellds">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">resume_from_multicellds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xml_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_cells</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_print</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#physicellpy.resume_from_multicellds" title="Link to this definition"></a></dt>
+<dd><p>Resume a simulation from a MultiCellDS v2 snapshot written by save_multicellds() – folder_path/xml_filename is the snapshot’s XML index file, e.g. pc.resume_from_multicellds(pc.config_folder(), ‘output00000001.xml’). Set create_cells=False to just validate/inspect the snapshot without recreating cells. Returns 0 on success.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="physicellpy.set_svg_coloring_function">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">set_svg_coloring_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_coloring_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.set_svg_coloring_function" title="Link to this definition"></a></dt>
 <dd><p>Register a Python callable cell_coloring_function(cell) -&gt; [fill, outline, nucleus_fill, nucleus_outline] (exactly 4 color strings, e.g. ‘rgb(255,0,0)’ or ‘black’) as a custom SVG coloring scheme – the same 4-string convention PhysiCell’s own built-in coloring functions return. Pass cell_coloring=’custom’ to save_svg()/save_svg_legend() to use it. Only one custom function can be registered at a time; calling this again replaces it. If the function raises, or returns something other than 4 strings, that cell falls back to ‘by_number’ coloring for that one call rather than aborting the snapshot.</p>
@@ -1693,7 +1836,7 @@ default magnitudes.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="physicellpy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="funding.html" class="btn btn-neutral float-right" title="Funding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="publications.html" class="btn btn-neutral float-right" title="Publications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
