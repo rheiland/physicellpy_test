@@ -82,7 +82,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.flag_for_removal"><code class="docutils literal notranslate"><span class="pre">Cell.flag_for_removal()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.is_movable"><code class="docutils literal notranslate"><span class="pre">Cell.is_movable</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.is_out_of_domain"><code class="docutils literal notranslate"><span class="pre">Cell.is_out_of_domain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.nearby_interacting_cells"><code class="docutils literal notranslate"><span class="pre">Cell.nearby_interacting_cells()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.nearest_density_vector"><code class="docutils literal notranslate"><span class="pre">Cell.nearest_density_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.nearest_gradient"><code class="docutils literal notranslate"><span class="pre">Cell.nearest_gradient()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.parameters"><code class="docutils literal notranslate"><span class="pre">Cell.parameters</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.phenotype"><code class="docutils literal notranslate"><span class="pre">Cell.phenotype</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.position"><code class="docutils literal notranslate"><span class="pre">Cell.position</span></code></a></li>
@@ -170,6 +172,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Volume.cytoplasmic"><code class="docutils literal notranslate"><span class="pre">Volume.cytoplasmic</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Volume.cytoplasmic_biomass_change_rate"><code class="docutils literal notranslate"><span class="pre">Volume.cytoplasmic_biomass_change_rate</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Volume.divide"><code class="docutils literal notranslate"><span class="pre">Volume.divide()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Volume.fluid_change_rate"><code class="docutils literal notranslate"><span class="pre">Volume.fluid_change_rate</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Volume.fluid_fraction"><code class="docutils literal notranslate"><span class="pre">Volume.fluid_fraction</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Volume.multiply_by_ratio"><code class="docutils literal notranslate"><span class="pre">Volume.multiply_by_ratio()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Volume.nuclear"><code class="docutils literal notranslate"><span class="pre">Volume.nuclear</span></code></a></li>
@@ -181,6 +184,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.Geometry"><code class="docutils literal notranslate"><span class="pre">Geometry</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.Mechanics"><code class="docutils literal notranslate"><span class="pre">Mechanics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Mechanics.attachment_elastic_constant"><code class="docutils literal notranslate"><span class="pre">Mechanics.attachment_elastic_constant</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Mechanics.cell_BM_adhesion_strength"><code class="docutils literal notranslate"><span class="pre">Mechanics.cell_BM_adhesion_strength</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Mechanics.cell_BM_repulsion_strength"><code class="docutils literal notranslate"><span class="pre">Mechanics.cell_BM_repulsion_strength</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Mechanics.cell_cell_adhesion_strength"><code class="docutils literal notranslate"><span class="pre">Mechanics.cell_cell_adhesion_strength</span></code></a></li>
@@ -189,6 +193,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.Motility"><code class="docutils literal notranslate"><span class="pre">Motility</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Motility.chemotaxis_direction"><code class="docutils literal notranslate"><span class="pre">Motility.chemotaxis_direction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physicellpy.Motility.chemotaxis_index"><code class="docutils literal notranslate"><span class="pre">Motility.chemotaxis_index</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Motility.is_motile"><code class="docutils literal notranslate"><span class="pre">Motility.is_motile</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Motility.migration_bias"><code class="docutils literal notranslate"><span class="pre">Motility.migration_bias</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Motility.migration_bias_direction"><code class="docutils literal notranslate"><span class="pre">Motility.migration_bias_direction</span></code></a></li>
@@ -584,9 +590,21 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.nearby_interacting_cells">
+<span class="sig-name descname"><span class="pre">nearby_interacting_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#physicellpy.Cell.nearby_interacting_cells" title="Link to this definition"></a></dt>
+<dd><p>Cells within interaction distance of this cell (PhysiCell’s Cell::nearby_interacting_cells(), a superset-style query over the mechanics voxels – not the same list as state.neighbors)</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="physicellpy.Cell.nearest_density_vector">
 <span class="sig-name descname"><span class="pre">nearest_density_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#physicellpy.Cell.nearest_density_vector" title="Link to this definition"></a></dt>
 <dd><p>Zero-copy view of the local substrate concentrations at this cell’s voxel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="physicellpy.Cell.nearest_gradient">
+<span class="sig-name descname"><span class="pre">nearest_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">substrate_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#physicellpy.Cell.nearest_gradient" title="Link to this definition"></a></dt>
+<dd><p>[gx, gy, gz] gradient of the given substrate at this cell’s voxel (a copy). Requires &lt;calculate_gradients&gt; in the config.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1023,6 +1041,12 @@ default magnitudes.</p>
 </dd></dl>
 
 <dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.Volume.fluid_change_rate">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fluid_change_rate</span></span><a class="headerlink" href="#physicellpy.Volume.fluid_change_rate" title="Link to this definition"></a></dt>
+<dd><p>Rate (1/min) the fluid volume relaxes toward fluid_fraction * total – independent of cytoplasmic_biomass_change_rate/nuclear_biomass_change_rate (those only govern the two SOLID components); a nonzero rate here alone is enough to keep growing total volume even with both of those zeroed.</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.Volume.fluid_fraction">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fluid_fraction</span></span><a class="headerlink" href="#physicellpy.Volume.fluid_fraction" title="Link to this definition"></a></dt>
 <dd><p>Fraction of total volume that is fluid (dimensionless, 0-1)</p>
@@ -1075,6 +1099,12 @@ default magnitudes.</p>
 <dt class="sig sig-object py" id="physicellpy.Mechanics">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">Mechanics</span></span><a class="headerlink" href="#physicellpy.Mechanics" title="Link to this definition"></a></dt>
 <dd><dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.Mechanics.attachment_elastic_constant">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">attachment_elastic_constant</span></span><a class="headerlink" href="#physicellpy.Mechanics.attachment_elastic_constant" title="Link to this definition"></a></dt>
+<dd><p>Spring constant (1/min) of the elastic pull between attached cells – used by standard_elastic_contact_function()</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.Mechanics.cell_BM_adhesion_strength">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">cell_BM_adhesion_strength</span></span><a class="headerlink" href="#physicellpy.Mechanics.cell_BM_adhesion_strength" title="Link to this definition"></a></dt>
 <dd><p>Cell-basement-membrane adhesion strength – grammar symbol reserved for future reference models (Cell_grammar_supp.pdf, Other terms)</p>
@@ -1110,6 +1140,18 @@ default magnitudes.</p>
 <dt class="sig sig-object py" id="physicellpy.Motility">
 <span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">Motility</span></span><a class="headerlink" href="#physicellpy.Motility" title="Link to this definition"></a></dt>
 <dd><dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.Motility.chemotaxis_direction">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">chemotaxis_direction</span></span><a class="headerlink" href="#physicellpy.Motility.chemotaxis_direction" title="Link to this definition"></a></dt>
+<dd><p>+1 to move up the chemotaxis substrate’s gradient, -1 to move down it</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="physicellpy.Motility.chemotaxis_index">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">chemotaxis_index</span></span><a class="headerlink" href="#physicellpy.Motility.chemotaxis_index" title="Link to this definition"></a></dt>
+<dd><p>Index of the substrate whose gradient standard chemotaxis follows (&lt;motility&gt;&lt;options&gt;&lt;chemotaxis&gt;&lt;substrate&gt;)</p>
+</dd></dl>
+
+<dl class="py property">
 <dt class="sig sig-object py" id="physicellpy.Motility.is_motile">
 <span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">is_motile</span></span><a class="headerlink" href="#physicellpy.Motility.is_motile" title="Link to this definition"></a></dt>
 <dd><p>Whether this cell moves at all (&lt;motility&gt;&lt;options&gt;&lt;enabled&gt; in the config)</p>
