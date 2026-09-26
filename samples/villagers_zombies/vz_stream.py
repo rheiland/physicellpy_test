@@ -108,7 +108,7 @@ rule_flipped = False
 # villager,damage,increases,transform to zombie,0.01,0.5,4,0
 
 while pc.current_time() < demo_max_time:
-    pc.run_simulation_step()
+    pc.step()
 
     # if not rule_flipped and pc.current_time() > 400:
     if not rule_flipped and pc.current_time() > 500:
