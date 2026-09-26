@@ -6,12 +6,17 @@ Simulation setup and control
 
 .. autofunction:: physicellpy.initialize
 .. autofunction:: physicellpy.setup_tissue
-.. autofunction:: physicellpy.run_simulation_step
+.. autofunction:: physicellpy.step
+.. autofunction:: physicellpy.step_no_diffusion
 .. autofunction:: physicellpy.sync_cell_hooks
 .. autofunction:: physicellpy.current_time
 .. autofunction:: physicellpy.max_time
 .. autofunction:: physicellpy.diffusion_dt
+.. autofunction:: physicellpy.set_diffusion_dt
 .. autofunction:: physicellpy.mechanics_dt
+.. autofunction:: physicellpy.set_mechanics_dt
+.. autofunction:: physicellpy.phenotype_dt
+.. autofunction:: physicellpy.set_phenotype_dt
 .. autofunction:: physicellpy.intracellular_dt
 .. autofunction:: physicellpy.set_intracellular_dt
 .. autofunction:: physicellpy.simulate_2D
@@ -32,6 +37,9 @@ Cells and cell types
 .. autofunction:: physicellpy.register_cell_definition
 .. autofunction:: physicellpy.attach_cells
 .. autofunction:: physicellpy.detach_cells
+.. autofunction:: physicellpy.attach_cells_as_spring
+.. autofunction:: physicellpy.detach_cells_as_spring
+.. autofunction:: physicellpy.standard_elastic_contact_function
 
 .. autoclass:: physicellpy.Cell
    :members:

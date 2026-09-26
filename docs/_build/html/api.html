@@ -47,12 +47,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#simulation-setup-and-control">Simulation setup and control</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.initialize"><code class="docutils literal notranslate"><span class="pre">initialize()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.setup_tissue"><code class="docutils literal notranslate"><span class="pre">setup_tissue()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#physicellpy.run_simulation_step"><code class="docutils literal notranslate"><span class="pre">run_simulation_step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.step"><code class="docutils literal notranslate"><span class="pre">step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.step_no_diffusion"><code class="docutils literal notranslate"><span class="pre">step_no_diffusion()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.sync_cell_hooks"><code class="docutils literal notranslate"><span class="pre">sync_cell_hooks()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.current_time"><code class="docutils literal notranslate"><span class="pre">current_time()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.max_time"><code class="docutils literal notranslate"><span class="pre">max_time()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.diffusion_dt"><code class="docutils literal notranslate"><span class="pre">diffusion_dt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.set_diffusion_dt"><code class="docutils literal notranslate"><span class="pre">set_diffusion_dt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.mechanics_dt"><code class="docutils literal notranslate"><span class="pre">mechanics_dt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.set_mechanics_dt"><code class="docutils literal notranslate"><span class="pre">set_mechanics_dt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.phenotype_dt"><code class="docutils literal notranslate"><span class="pre">phenotype_dt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.set_phenotype_dt"><code class="docutils literal notranslate"><span class="pre">set_phenotype_dt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.intracellular_dt"><code class="docutils literal notranslate"><span class="pre">intracellular_dt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.set_intracellular_dt"><code class="docutils literal notranslate"><span class="pre">set_intracellular_dt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.simulate_2D"><code class="docutils literal notranslate"><span class="pre">simulate_2D()</span></code></a></li>
@@ -70,6 +75,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.register_cell_definition"><code class="docutils literal notranslate"><span class="pre">register_cell_definition()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.attach_cells"><code class="docutils literal notranslate"><span class="pre">attach_cells()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.detach_cells"><code class="docutils literal notranslate"><span class="pre">detach_cells()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.attach_cells_as_spring"><code class="docutils literal notranslate"><span class="pre">attach_cells_as_spring()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.detach_cells_as_spring"><code class="docutils literal notranslate"><span class="pre">detach_cells_as_spring()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physicellpy.standard_elastic_contact_function"><code class="docutils literal notranslate"><span class="pre">standard_elastic_contact_function()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#physicellpy.Cell"><code class="docutils literal notranslate"><span class="pre">Cell</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.ID"><code class="docutils literal notranslate"><span class="pre">Cell.ID</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#physicellpy.Cell.cells_in_my_container"><code class="docutils literal notranslate"><span class="pre">Cell.cells_in_my_container()</span></code></a></li>
@@ -394,21 +402,27 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="physicellpy.run_simulation_step">
-<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">run_simulation_step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.run_simulation_step" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="physicellpy.step">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.step" title="Link to this definition"></a></dt>
 <dd><p>Advance the simulation by one diffusion_dt: diffusion/decay, cell mechanics/phenotype update, backfill Python hooks onto any new daughter cells (see sync_cell_hooks()), then current_time += diffusion_dt. Call this from a Python loop to actually step the simulation forward.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.step_no_diffusion">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">step_no_diffusion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.step_no_diffusion" title="Link to this definition"></a></dt>
+<dd><p>Same as step(), but skips microenvironment.simulate_diffusion_decay() – cell mechanics/phenotype update, hook backfill, then current_time += diffusion_dt only. For simulations that don’t use the microenvironment (no substrates to diffuse) or want to advance time/mechanics without paying for a diffusion solve.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="physicellpy.sync_cell_hooks">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">sync_cell_hooks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.sync_cell_hooks" title="Link to this definition"></a></dt>
-<dd><p>Backfill Python phenotype hooks (registered via CellDefinition.set_update_phenotype() etc.) onto daughter cells created by division since the last call. run_simulation_step() already calls this automatically every step, so you normally don’t need to call it yourself – kept as a standalone function for callers advancing time some other way.</p>
+<dd><p>Backfill Python phenotype hooks (registered via CellDefinition.set_update_phenotype() etc.) onto daughter cells created by division since the last call. step() already calls this automatically every step, so you normally don’t need to call it yourself – kept as a standalone function for callers advancing time some other way.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="physicellpy.current_time">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">current_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#physicellpy.current_time" title="Link to this definition"></a></dt>
-<dd><p>Current simulation time (minutes), as advanced by run_simulation_step()</p>
+<dd><p>Current simulation time (minutes), as advanced by step()</p>
 </dd></dl>
 
 <dl class="py function">
@@ -424,9 +438,33 @@
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.set_diffusion_dt">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">set_diffusion_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.set_diffusion_dt" title="Link to this definition"></a></dt>
+<dd><p>Override the diffusion time step (minutes) set by the loaded config’s &lt;dt_diffusion&gt;. Affects step()’s diffusion/decay and its current_time increment immediately, including calls already in flight in a running loop.</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="physicellpy.mechanics_dt">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">mechanics_dt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#physicellpy.mechanics_dt" title="Link to this definition"></a></dt>
 <dd><p>Mechanics time step (minutes) from the loaded config’s &lt;dt_mechanics&gt; – a distinct value from diffusion_dt(). Needed for pc.physimess_mechanics(dt), which expects the same dt PhysiCell’s own main.cpp passes it (PhysiMeSS.cpp self-gates on this value, same pattern update_all_cells() uses internally for its own mechanics/phenotype timing).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.set_mechanics_dt">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">set_mechanics_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.set_mechanics_dt" title="Link to this definition"></a></dt>
+<dd><p>Override the mechanics time step (minutes) set by the loaded config’s &lt;dt_mechanics&gt;. Note: Cell::update_position()’s Adams-Bashforth coefficients are cached in a function-local static on first call and never recomputed afterward, so this only takes effect if set before the first update_position() call (direct or via step()) of the process – changing it mid-run will not un-latch that cache.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.phenotype_dt">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">phenotype_dt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#physicellpy.phenotype_dt" title="Link to this definition"></a></dt>
+<dd><p>Phenotype time step (minutes) from the loaded config’s &lt;dt_phenotype&gt;</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.set_phenotype_dt">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">set_phenotype_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.set_phenotype_dt" title="Link to this definition"></a></dt>
+<dd><p>Override the phenotype time step (minutes) set by the loaded config’s &lt;dt_phenotype&gt;. Affects update_all_cells()’s phenotype-update cadence on subsequent step() calls.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -438,7 +476,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="physicellpy.set_intracellular_dt">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">set_intracellular_dt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.set_intracellular_dt" title="Link to this definition"></a></dt>
-<dd><p>Override the intracellular time step (minutes) set by the loaded config’s &lt;dt_intracellular&gt;. Affects update_all_cells()’s intracellular-model update cadence (pre_update_intracellular/post_update_intracellular) on subsequent run_simulation_step() calls.</p>
+<dd><p>Override the intracellular time step (minutes) set by the loaded config’s &lt;dt_intracellular&gt;. Affects update_all_cells()’s intracellular-model update cadence (pre_update_intracellular/post_update_intracellular) on subsequent step() calls.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -513,6 +551,24 @@
 <dt class="sig sig-object py" id="physicellpy.detach_cells">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">detach_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.detach_cells" title="Link to this definition"></a></dt>
 <dd><p>Remove each cell from the other’s attached_cells list, if present</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.attach_cells_as_spring">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">attach_cells_as_spring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.attach_cells_as_spring" title="Link to this definition"></a></dt>
+<dd><p>Add each cell to the other’s spring_attachments list</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.detach_cells_as_spring">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">detach_cells_as_spring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.detach_cells_as_spring" title="Link to this definition"></a></dt>
+<dd><p>Remove each cell from the other’s spring_attachments list, if present</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="physicellpy.standard_elastic_contact_function">
+<span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">standard_elastic_contact_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">phenotype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Phenotype" title="physicellpy.Phenotype"><span class="pre">physicellpy.Phenotype</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_cell</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Cell" title="physicellpy.Cell"><span class="pre">physicellpy.Cell</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_phenotype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#physicellpy.Phenotype" title="physicellpy.Phenotype"><span class="pre">physicellpy.Phenotype</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.standard_elastic_contact_function" title="Link to this definition"></a></dt>
+<dd><p>PhysiCell’s spring-like elastic pull toward an attached cell (adds attachment_elastic_constant * displacement to this cell’s velocity). Call it from a set_contact_function() hook, which PhysiCell invokes once per entry in cell.state.attached_cells.</p>
 </dd></dl>
 
 <dl class="py class">
@@ -1809,7 +1865,7 @@ default magnitudes.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="physicellpy.physimess_mechanics">
 <span class="sig-prename descclassname"><span class="pre">physicellpy.</span></span><span class="sig-name descname"><span class="pre">physimess_mechanics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#physicellpy.physimess_mechanics" title="Link to this definition"></a></dt>
-<dd><p>Advance fibre-fibre/cell-fibre neighbor tracking and crosslinking. Self-gates on a static last-update-time (same pattern Cell_Container::update_all_cells uses internally), so it’s safe to call unconditionally every diffusion step – matches main.cpp’s own call site exactly: pc.physimess_mechanics(pc.mechanics_dt()) right before pc.run_simulation_step().</p>
+<dd><p>Advance fibre-fibre/cell-fibre neighbor tracking and crosslinking. Self-gates on a static last-update-time (same pattern Cell_Container::update_all_cells uses internally), so it’s safe to call unconditionally every diffusion step – matches main.cpp’s own call site exactly: pc.physimess_mechanics(pc.mechanics_dt()) right before pc.step().</p>
 </dd></dl>
 
 <dl class="py function">

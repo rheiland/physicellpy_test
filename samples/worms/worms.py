@@ -153,7 +153,7 @@ next_report = 0.0
 output_index = 0
 
 while pc.current_time() < pc.max_time():
-    pc.run_simulation_step()
+    pc.step()
 
     if pc.current_time() >= next_report:
         n_alive = sum(1 for c in pc.all_cells() if not c.phenotype.death.dead)

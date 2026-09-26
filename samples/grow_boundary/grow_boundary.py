@@ -3,6 +3,20 @@ import physicellpy as pc
 import math
 import random
 
+def h2o_update_phenotype(cell, phenotype, dt):
+    # print(f'----- {pc.current_time}: # attachments={dir(cell)}')
+    print(f'----- {pc.current_time()}:  # attached= {cell.number_of_attached_cells()}')
+    # pc.update_cell_and_death_parameters_O2_based(cell, phenotype, dt)
+
+    # if pc.get_single_signal(cell, "dead") > 0.5:
+    #     cell.clear_update_phenotype()
+    #     return
+
+    # cycle_rate = pc.get_single_behavior(cell, "cycle entry")
+    # cycle_rate *= pc.get_single_signal(cell, "custom:oncoprotein")
+    # pc.set_single_behavior(cell, "cycle entry", cycle_rate)
+
+
 def create_cargo_cluster_6(cargo_definition, x0, y0, z=0.0, spacing=None, rng=None):
     """Create a hollow ring of 6 cargo cells centered at (x0, y0), with a
     random overall orientation.
@@ -31,6 +45,9 @@ def create_cargo_cluster_6(cargo_definition, x0, y0, z=0.0, spacing=None, rng=No
 pc.initialize("config/PhysiCell_settings.xml")
 
 h2o_def = pc.find_cell_definition("h2o_source")
+# callback fns must be set BEFORE defining ccells
+h2o_def.set_update_phenotype(h2o_update_phenotype)
+
 c = pc.create_cell(h2o_def)
 c.is_movable = False
 c.position = [0, 0, 0]
@@ -53,8 +70,11 @@ report_every = 30.0    # minutes
 next_report = 0.0
 output_index = 0
 
-while pc.current_time() < pc.max_time():
-    pc.run_simulation_step()
+max_time = pc.current_time()
+max_time = 10
+
+while pc.current_time() < max_time:
+    pc.step()
 
     if pc.current_time() >= next_report:
         n_alive = sum(1 for c in pc.all_cells() if not c.phenotype.death.dead)

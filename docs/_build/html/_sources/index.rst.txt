@@ -28,4 +28,4 @@ Getting started
    pc.setup_tissue()
 
    while pc.current_time() < pc.max_time():
-       pc.run_simulation_step()
+       pc.step()

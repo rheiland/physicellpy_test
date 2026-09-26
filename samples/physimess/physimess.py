@@ -37,6 +37,7 @@ pc.initialize("config/Fibre_Degradation/mymodel_fibre_degradation.xml")
 # the cd->functions.xxx = ... lines in every PhysiMeSS sample project's own
 # create_cell_types(). Must happen before any create_cell() calls:
 # instantiate_cell is read once, at creation time.
+
 pc.setup_physimess_cell_definition(pc.cell_defaults, is_fibre=False)
 for cd_name in pc.cell_type_names():
     cd = pc.find_cell_definition(cd_name)
@@ -96,9 +97,9 @@ output_index = 0
 
 while pc.current_time() < demo_max_time:
     # Matches main.cpp's own call order: physimess_mechanics() before
-    # run_simulation_step(), both driven every diffusion step.
+    # step(), both driven every diffusion step.
     pc.physimess_mechanics(pc.mechanics_dt())
-    pc.run_simulation_step()
+    pc.step()
 
     if pc.current_time() >= next_report:
         n = len(pc.all_cells())
