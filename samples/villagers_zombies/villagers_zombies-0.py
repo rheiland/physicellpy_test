@@ -56,7 +56,6 @@ report_every = 5.0    # minutes
 next_report = 0.0
 output_index = 0
 rule_flipped = False
-zombie_apoptosis_added = False
 
 # villager,contact with villager,increases,cycle entry,0.001,0.5,50,0
 # villager,damage,increases,apoptosis,0.05,0.5,4,0
@@ -64,18 +63,6 @@ zombie_apoptosis_added = False
 
 while pc.current_time() < demo_max_time:
     pc.step()
-
-    if not zombie_apoptosis_added and pc.current_time() >= 60:
-        # new rule: zombie,time,increases,apoptosis,1,720,8,0
-        pc.add_rule("zombie", "time", "apoptosis", "increases")
-        zombie_apoptosis_rule = pc.find_ruleset(zombie_def).find_behavior("apoptosis")
-        zombie_apoptosis_rule.max_value = 0.1        # saturation value
-        zombie_apoptosis_rule.set_half_max("time", 720)   # 12 hours, in minutes
-        zombie_apoptosis_rule.set_hill_power("time", 8)
-
-        zombie_apoptosis_added = True
-        print(f"t = {pc.current_time():7.1f} min | added zombie apoptosis-by-time rule "
-              f"(half_max=720 min, hill_power=8, saturation=1)")
 
     if not rule_flipped and pc.current_time() > 400:
         # was: damage increases apoptosis, toward max_value=0.05
