@@ -126,7 +126,8 @@ def vascular_network(microenv, idx_oxygen, oxy_value=40.0, *,
                 if best_width is not None:
                     voxel = (k * ny + j) * nx + i
                     microenv.update_dirichlet_node(
-                        voxel, idx_oxygen, oxy_value * best_width / initial_width)
+                        voxel, idx_oxygen, 40.0)
+                        # voxel, idx_oxygen, oxy_value * best_width / initial_width)
 
     # update_dirichlet_node() only marks the voxel/value; the density field
     # isn't actually updated until the next diffusion-decay solve step, so
